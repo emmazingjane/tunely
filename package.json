@@ -1,0 +1,22 @@
+{
+  "name": "tunely",
+  "version": "1.0.0",
+  "description": "my tune.ly app",
+  "main": "server.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emmazingjane/tunely.git"
+  },
+  "author": "emma and friends",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emmazingjane/tunely/issues"
+  },
+  "homepage": "https://github.com/emmazingjane/tunely#readme"
+}
