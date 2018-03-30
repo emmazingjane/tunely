@@ -14,6 +14,8 @@ var controllers = require('./controllers')
 
 app.get('/api', controllers.api.index);
 
+app.get('/api/albums', controllers.albums.index);
+
 
 
 
