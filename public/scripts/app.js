@@ -35,11 +35,28 @@ $(document).ready(function() {
   
   $.ajax({
     method: 'GET',
-    url: '/api/albums',
+    url: 'api/albums',
     success: handleSuccess,
     error: handleError
   });
+
+$('#album-form').on('submit', function(e) {
+    e.preventDefault();
+    $.ajax({
+      method: 'POST',
+      url: 'api/albums',
+      data: $(this).serialize(),
+      success: function(createdAlbum){
+        renderAlbum(createdAlbum)
+      },
+      error: handlePostError
+    });
+    $(this).trigger('reset');
+  });
+
+
 });
+
 
 function handleSuccess (albums) {
     albums.forEach(function(album) {
@@ -47,8 +64,18 @@ function handleSuccess (albums) {
     });
 };
 
+
+// function handlePostSuccess(createdAlbum){
+//   renderAlbum(createdAlbum);
+// };
+
+
 function handleError(err){
   console.log('There has been an error: ', err);
+}
+
+function handlePostError(errs){
+  console.log('there has been an error', errs);
 }
 
 // this function takes a single album and renders  it to the page
